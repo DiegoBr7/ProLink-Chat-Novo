@@ -9,10 +9,10 @@ export const AuthContextProvider = ({children}) =>{
 const [user,setUser] = useState(null);
 const [isAuthenticated , setIsAuthenticated] = useState(undefined);
 
-useEffect(() => {
+ useEffect(() => {
 
-setTimeout(() => {
-    setIsAuthenticated(true);
+ setTimeout(() => {
+    setIsAuthenticated(false);
 } , 3000)
 
  } , [])
@@ -40,7 +40,7 @@ setTimeout(() => {
  }
 
  return (
-    <AuthContext.Provider value={{user, isAuthenticated , login , register , logout}}>
+    <AuthContext.Provider value={{user, isAuthenticated ,setIsAuthenticated , login , register , logout}}>
     {children}
     </AuthContext.Provider>
  )
